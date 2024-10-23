@@ -1,10 +1,10 @@
 type ButtonProps = {
-  text: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  children: React.ReactNode;
+  onclick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
-const Button = ({ text, onClick }: ButtonProps) => {
-  return <button onClick={onClick}>{text}</button>;
+const Button = ({ children, onclick }: ButtonProps) => {
+  return <button onClick={onclick}>{children}</button>;
 };
 
 export default Button;

@@ -1,15 +1,15 @@
-import { useState } from "react";
 import "./App.css";
 import Button from "./components/Button";
+import { CiShoppingCart } from "react-icons/ci";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  const handleClick = () => setCount((count) => count + 1);
+  const handleClick = () => console.log("Buying...");
 
   return (
     <>
-      <Button onClick={handleClick} text={`count is ${count}`} />
+      <Button onclick={handleClick}>
+        <CiShoppingCart /> Buy now!
+      </Button>
     </>
   );
 }
