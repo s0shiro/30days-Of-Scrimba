@@ -7,7 +7,12 @@ function App() {
 
   return (
     <>
-      <Button onclick={handleClick}>
+      <Button
+        size="lg"
+        variant="success"
+        className="green"
+        onClick={handleClick}
+      >
         <CiShoppingCart /> Buy now!
       </Button>
     </>

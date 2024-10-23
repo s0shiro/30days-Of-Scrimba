@@ -60,6 +60,40 @@ button > svg {
   color: #646cff;
 }
 
+button.button-sm {
+  padding: 7px 11px;
+  font-size: 12px;
+}
+
+button.button-lg {
+  padding: 30px 40px;
+}
+
+button {
+  color: green;
+}
+
+/* Success Variant */
+button.button-success {
+  border-color: green;
+  color: green;
+  background-color: #d4edda; /* Light green */
+}
+
+/* Warning Variant */
+button.button-warning {
+  border-color: orange;
+  color: orange;
+  background-color: #fff3cd; /* Light orange */
+}
+
+/* Danger Variant */
+button.button-danger {
+  border-color: red;
+  color: red;
+  background-color: #f8d7da; /* Light red */
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
