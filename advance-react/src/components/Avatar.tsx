@@ -9,8 +9,8 @@ type AvatarProps = {
 
 const Avatar = ({ src, alt, children }: AvatarProps) => {
   const avatarClass = clsx("avatar", {
-    "avatar-letter": !src,
-    "avatar-icon": !src && !children,
+    "avatar-letter": !src, // Add avatar-letter class if no image
+    "avatar-icon": !src && !children, // Add avatar-icon class if no image and children
   });
 
   // Randomize background color for non-image avatars

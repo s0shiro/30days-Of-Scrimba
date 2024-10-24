@@ -1,0 +1,7 @@
+import { ChildrenPropsType } from "../../utils/types";
+
+const Menu = ({ children }: ChildrenPropsType) => {
+  return <div className="menu">{children}</div>;
+};
+
+export default Menu;
