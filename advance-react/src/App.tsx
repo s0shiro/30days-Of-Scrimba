@@ -1,12 +1,11 @@
 import "./App.css";
-import Avatar from "./components/Avatar";
-import Button from "./components/Button";
-import { CiShoppingCart } from "react-icons/ci";
-import Menu from "./components/compound-components/index";
+// import Avatar from "./components/Avatar";
+// import Button from "./components/Button";
+// import { CiShoppingCart } from "react-icons/ci";
+import Menu from "./components/Menu/index";
+import Toggle from "./components/Toggle/index";
 
 function App() {
-  const sports = ["Tennis", "Pickleball", "Racquetball", "Squash"];
-
   //   const handleClick = () => console.log("Buying...");
 
   return (
@@ -29,14 +28,20 @@ function App() {
       <br />
       <Avatar /> */}
 
-      <Menu>
-        <Menu.Button>Sports</Menu.Button>
-        <Menu.Dropdown>
-          {sports.map((sport, index) => (
-            <Menu.Item key={index}>{sport}</Menu.Item>
-          ))}
-        </Menu.Dropdown>
-      </Menu>
+      {/*  */}
+      <Toggle>
+        <Toggle.Button>
+          <Menu.Button>Menu</Menu.Button>
+        </Toggle.Button>
+        <Toggle.On>
+          <Menu.Dropdown>
+            <Menu.Item>Home</Menu.Item>
+            <Menu.Item>About</Menu.Item>
+            <Menu.Item>Contact</Menu.Item>
+            <Menu.Item>Services</Menu.Item>
+          </Menu.Dropdown>
+        </Toggle.On>
+      </Toggle>
     </>
   );
 }
