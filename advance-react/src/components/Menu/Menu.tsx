@@ -1,10 +1,13 @@
 import { ChildrenPropsType } from "../../utils/types";
+import Toggle from "../Toggle";
 
 const Menu = ({ children }: ChildrenPropsType) => {
   return (
-    <div className="menu" role="menu">
-      {children}
-    </div>
+    <Toggle>
+      <div className="menu" role="menu">
+        {children}
+      </div>
+    </Toggle>
   );
 };
 
