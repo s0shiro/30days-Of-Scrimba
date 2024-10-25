@@ -41,6 +41,19 @@
   color: #888;
 }
 
+.star {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  transition: color 0.5s ease-in-out;
+  user-select: none;
+  color: white;
+}
+
+.star.filled {
+  color: orange;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
