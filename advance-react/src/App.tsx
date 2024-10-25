@@ -2,10 +2,7 @@ import "./App.css";
 import Avatar from "./components/Avatar";
 import Button from "./components/Button";
 import { CiShoppingCart } from "react-icons/ci";
-import Menu from "./components/compound-components/Menu";
-import MenuButton from "./components/compound-components/MenuButton";
-import MenuDropdown from "./components/compound-components/MenuDropdown";
-import MenuItem from "./components/compound-components/MenuItem";
+import Menu from "./components/compound-components/index";
 
 function App() {
   const sports = ["Tennis", "Pickleball", "Racquetball", "Squash"];
@@ -33,12 +30,12 @@ function App() {
       <Avatar /> */}
 
       <Menu>
-        <MenuButton>Sports</MenuButton>
-        <MenuDropdown>
+        <Menu.Button>Sports</Menu.Button>
+        <Menu.Dropdown>
           {sports.map((sport, index) => (
-            <MenuItem key={index}>{sport}</MenuItem>
+            <Menu.Item key={index}>{sport}</Menu.Item>
           ))}
-        </MenuDropdown>
+        </Menu.Dropdown>
       </Menu>
     </>
   );
