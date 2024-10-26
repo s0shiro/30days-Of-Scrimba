@@ -1,11 +1,14 @@
-import React, { ReactNode } from "react";
 import Toggle from "./Toggle";
 import ToggleButton from "./ToggleButton";
 import ToggleOn from "./ToggleOn";
 import ToggleOff from "./ToggleOff";
 
 // Define the types for the Menu component and its subcomponents
-interface ToggleComponent extends React.FC<{ children: ReactNode }> {
+interface ToggleComponent
+  extends React.FC<{
+    children: React.ReactNode;
+    onToggle: (on: boolean) => void;
+  }> {
   Button: typeof ToggleButton;
   On: typeof ToggleOn;
   Off: typeof ToggleOff;
