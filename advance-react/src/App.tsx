@@ -5,10 +5,8 @@ import Star from "./components/Star";
 function App() {
   return (
     <>
-      <Star onChange={() => console.log("Star was clicked")} />
-      {/*  */}
-
-      <Menu>
+      <Star onChange={() => console.log()} />
+      <Menu onOpen={() => console.log("Menu toggled")}>
         <Menu.Button>Menu</Menu.Button>
         <Menu.Dropdown>
           <Menu.Item>Home</Menu.Item>

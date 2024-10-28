@@ -1,23 +1,26 @@
-import { useEffect, useState } from "react";
-import { ChildrenPropsType } from "../../utils/types";
+import React, { useEffect, useState, useRef } from "react";
 import ToggleContext from "./ToggleContext";
+import { ChildrenPropsType } from "../../utils/types";
 
 interface ToggleProps extends ChildrenPropsType {
-  onToggle: (on: boolean) => void;
+  onToggle: () => void;
 }
 
-const Toggle: React.FC<ToggleProps> = ({ children, onToggle }: ToggleProps) => {
+const Toggle: React.FC<ToggleProps> = ({ children, onToggle }) => {
   const [on, setOn] = useState(false);
+  const firstRender = useRef(true);
 
   function toggle() {
     setOn((prevOn) => !prevOn);
   }
 
   useEffect(() => {
-    if (onToggle) {
-      onToggle(on);
+    if (firstRender.current) {
+      firstRender.current = false;
+    } else {
+      onToggle();
     }
-  }, [on, onToggle]);
+  });
 
   return (
     <ToggleContext.Provider value={{ on, toggle }}>

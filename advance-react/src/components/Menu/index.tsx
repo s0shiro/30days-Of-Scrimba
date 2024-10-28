@@ -5,7 +5,8 @@ import MenuDropdown from "./MenuDropdown";
 import MenuItem from "./MenuItem";
 
 // Define the types for the Menu component and its subcomponents
-interface MenuComponent extends React.FC<{ children: ReactNode }> {
+interface MenuComponent
+  extends React.FC<{ children: ReactNode; onOpen?: () => void }> {
   Button: typeof MenuButton;
   Dropdown: typeof MenuDropdown;
   Item: typeof MenuItem;
