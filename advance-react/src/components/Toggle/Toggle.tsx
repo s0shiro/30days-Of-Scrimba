@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import ToggleContext from "./ToggleContext";
 import { ChildrenPropsType } from "../../utils/types";
+import useEffectOnUpdate from "../../hooks/useEffectOnUpdate";
 
 interface ToggleProps extends ChildrenPropsType {
   onToggle: () => void;
@@ -8,19 +9,12 @@ interface ToggleProps extends ChildrenPropsType {
 
 const Toggle: React.FC<ToggleProps> = ({ children, onToggle = () => {} }) => {
   const [on, setOn] = useState(false);
-  const firstRender = useRef(true);
 
   function toggle() {
     setOn((prevOn) => !prevOn);
   }
 
-  useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
-    } else {
-      onToggle();
-    }
-  });
+  useEffectOnUpdate(onToggle, [on]);
 
   return (
     <ToggleContext.Provider value={{ on, toggle }}>
