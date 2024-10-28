@@ -1,18 +1,14 @@
-import React, { useEffect, useState, useRef } from "react";
 import ToggleContext from "./ToggleContext";
 import { ChildrenPropsType } from "../../utils/types";
 import useEffectOnUpdate from "../../hooks/useEffectOnUpdate";
+import useToggle from "../../hooks/useToggle";
 
 interface ToggleProps extends ChildrenPropsType {
   onToggle: () => void;
 }
 
 const Toggle: React.FC<ToggleProps> = ({ children, onToggle = () => {} }) => {
-  const [on, setOn] = useState(false);
-
-  function toggle() {
-    setOn((prevOn) => !prevOn);
-  }
+  const [on, toggle] = useToggle();
 
   useEffectOnUpdate(onToggle, [on]);
 

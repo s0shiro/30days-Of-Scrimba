@@ -6,32 +6,36 @@ import Toggle from "./components/Toggle/index";
 function App() {
   return (
     <>
-      <Toggle>
-        <Toggle.Button>
-          <Toggle.Display>
-            {(on) => <div className={`box ${on ? "filled" : ""}`}></div>}
-          </Toggle.Display>
-          <Toggle.On>
-            <div className="box filled"></div>
-          </Toggle.On>
-          <Toggle.Off>
-            <div className="box"></div>
-          </Toggle.Off>
-        </Toggle.Button>
-      </Toggle>
-
       <Star />
-      <Menu onOpen={() => console.log("Menu toggled")}>
-        <Menu.Button>Menu</Menu.Button>
-        <Menu.Dropdown>
-          <Menu.Item>Home</Menu.Item>
-          <Menu.Item>About</Menu.Item>
-          <Menu.Item>Contact</Menu.Item>
-          <Menu.Item>Services</Menu.Item>
-        </Menu.Dropdown>
-      </Menu>
     </>
   );
 }
 
 export default App;
+
+{
+  /* <Toggle>
+<Toggle.Button>
+  <Toggle.Display>
+    {(on) => <div className={`box ${on ? "filled" : ""}`}></div>}
+  </Toggle.Display>
+  <Toggle.On>
+    <div className="box filled"></div>
+  </Toggle.On>
+  <Toggle.Off>
+    <div className="box"></div>
+  </Toggle.Off>
+</Toggle.Button>
+</Toggle>
+
+<Star />
+<Menu onOpen={() => console.log("Menu toggled")}>
+<Menu.Button>Menu</Menu.Button>
+<Menu.Dropdown>
+  <Menu.Item>Home</Menu.Item>
+  <Menu.Item>About</Menu.Item>
+  <Menu.Item>Contact</Menu.Item>
+  <Menu.Item>Services</Menu.Item>
+</Menu.Dropdown>
+</Menu> */
+}
