@@ -2,7 +2,7 @@ import Toggle from "./Toggle/index";
 import { BsStar, BsStarFill } from "react-icons/bs";
 
 interface StarProps {
-  onChange: () => void;
+  onChange?: () => void;
 }
 
 export default function Star({ onChange }: StarProps) {

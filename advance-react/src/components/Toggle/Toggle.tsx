@@ -6,7 +6,7 @@ interface ToggleProps extends ChildrenPropsType {
   onToggle: () => void;
 }
 
-const Toggle: React.FC<ToggleProps> = ({ children, onToggle }) => {
+const Toggle: React.FC<ToggleProps> = ({ children, onToggle = () => {} }) => {
   const [on, setOn] = useState(false);
   const firstRender = useRef(true);
 
